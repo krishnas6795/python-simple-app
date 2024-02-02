@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage("build") {
+            steps {
+                sh """
+                    cd /home/jenkins
+                    docker build -t hello_there .
+                """
+            }
+        }
+        stage("run") {
+            steps {
+                sh """
+                    docker run -d hello_there
+                """
+            }
+        }
+    }
+}
