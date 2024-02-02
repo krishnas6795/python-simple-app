@@ -1,6 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the GitHub repository
+                script {
+                    checkout scm
+                }
+            }
+        }
         stage("build") {
             steps {
                 sh """
