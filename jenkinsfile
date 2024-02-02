@@ -4,7 +4,6 @@ pipeline {
         stage("build") {
             steps {
                 sh """
-                    cd /home/jenkins
                     docker build -t krishdockhub/hello_there .
                 """
             }
@@ -12,7 +11,7 @@ pipeline {
         stage("run") {
             steps {
                 sh """
-                    docker run -d hello_there
+                    docker run -d krishdockhub/hello_there
                 """
             }
         }
