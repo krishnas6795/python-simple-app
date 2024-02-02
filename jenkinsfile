@@ -18,7 +18,7 @@ pipeline {
         }
         stage("push image to dockerhub") {
             steps {
-                scripts {
+                script {
                     withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
                     sh 'docker login -u krishdockhub -p ${dockerhubpwd}'
                     }
