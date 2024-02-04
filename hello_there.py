@@ -1,2 +1,2 @@
 print('Hello Docker!')
-print('Test with JIRA')
+print('Test with JIRA site')
